@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>GIAN // Network Setup</title>
+
+
+    <style>
+
+        * {
+
+            box-sizing:
+                border-box;
+
+            margin:
+                0;
+
+            padding:
+                0;
+
+        }
+
+
+        body {
+
+            background:
+                #101419;
+
+            color:
+                #e8eef5;
+
+            font-family:
+                Arial,
+                sans-serif;
+
+            min-height:
+                100vh;
+
+            display:
+                flex;
+
+            justify-content:
+                center;
+
+            align-items:
+                center;
+
+            padding:
+                20px;
+
+        }
+
+
+        .panel {
+
+            width:
+                100%;
+
+            max-width:
+                500px;
+
+            border:
+                1px solid #2c3945;
+
+            padding:
+                30px;
+
+            background:
+                #151b21;
+
+        }
+
+
+        .title {
+
+            color:
+                #4c9fff;
+
+            font-size:
+                24px;
+
+            font-weight:
+                bold;
+
+            margin-bottom:
+                8px;
+
+        }
+
+
+        .subtitle {
+
+            color:
+                #7f8b96;
+
+            font-size:
+                13px;
+
+            margin-bottom:
+                30px;
+
+        }
+
+
+        label {
+
+            display:
+                block;
+
+            color:
+                #aeb9c4;
+
+            font-size:
+                12px;
+
+            margin-bottom:
+                7px;
+
+            text-transform:
+                uppercase;
+
+        }
+
+
+        input {
+
+            width:
+                100%;
+
+            padding:
+                12px;
+
+            margin-bottom:
+                18px;
+
+            background:
+                #0e1318;
+
+            border:
+                1px solid #303c47;
+
+            color:
+                white;
+
+            outline:
+                none;
+
+        }
+
+
+        input:focus {
+
+            border-color:
+                #4c9fff;
+
+        }
+
+
+        button {
+
+            width:
+                100%;
+
+            padding:
+                13px;
+
+            border:
+                1px solid #4c9fff;
+
+            background:
+                transparent;
+
+            color:
+                #4c9fff;
+
+            cursor:
+                pointer;
+
+            font-weight:
+                bold;
+
+        }
+
+
+        button:hover {
+
+            background:
+                #4c9fff;
+
+            color:
+                #101419;
+
+        }
+
+
+        #message {
+
+            margin-top:
+                18px;
+
+            font-size:
+                13px;
+
+            color:
+                #7f8b96;
+
+        }
+
+    </style>
+
+</head>
+
+
+<body>
+
+
+<div class="panel">
+
+
+    <div class="title">
+        GIAN // NETWORK SETUP
+    </div>
+
+
+    <div class="subtitle">
+        ESP32 WiFi Configuration
+    </div>
+
+
+    <form action="/" method="POST">
+
+
+        <label>
+            WiFi SSID
+        </label>
+
+
+        <input
+            type="text"
+            name="ssid"
+            id="ssid"
+            placeholder="Enter WiFi name"
+            required
+        >
+
+
+        <label>
+            WiFi Password
+        </label>
+
+
+        <input
+            type="password"
+            name="pass"
+            id="pass"
+            placeholder="Enter WiFi password"
+        >
+
+
+        <label>
+            Static IP
+        </label>
+
+
+        <input
+            type="text"
+            name="ip"
+            id="ip"
+            placeholder="192.168.1.100"
+        >
+
+
+        <label>
+            Gateway
+        </label>
+
+
+        <input
+            type="text"
+            name="gateway"
+            id="gateway"
+            placeholder="192.168.1.1"
+        >
+
+
+        <button type="submit">
+            SAVE NETWORK CONFIGURATION
+        </button>
+
+
+    </form>
+
+
+    <div id="message">
+        Configure the ESP32 network connection.
+    </div>
+
+
+</div>
+
+
+</body>
+
+</html>
