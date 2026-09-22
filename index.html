@@ -1,0 +1,310 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+
+    <meta charset="UTF-8">
+
+    <meta
+        name="viewport"
+        content="width=device-width, initial-scale=1.0"
+    >
+
+    <title>GIAN // DHT11 Monitoring</title>
+
+    <link
+        rel="stylesheet"
+        href="style.css"
+    >
+
+</head>
+
+
+<body>
+
+    <main class="page">
+
+
+        <!-- =========================================
+             HEADER
+        ========================================== -->
+
+        <header class="topbar">
+
+            <div>
+
+                <span class="system-label">
+                    DHT11 MONITORING SYSTEM
+                </span>
+
+                <h1>
+                    <span>//</span>GIAN ARVEX CERBAS
+                </h1>
+
+                <p class="subtitle">
+                    Temperature & Humidity Monitoring
+                </p>
+
+            </div>
+
+
+            <div class="live-indicator">
+
+                <span id="statusDot"></span>
+
+                <span id="statusText">
+                    CONNECTING
+                </span>
+
+            </div>
+
+        </header>
+
+
+        <!-- =========================================
+             CURRENT READINGS
+        ========================================== -->
+
+        <section class="current-section">
+
+
+            <div class="sensor-card">
+
+                <div class="sensor-label">
+                    TEMPERATURE
+                </div>
+
+                <div
+                    id="currentTemperature"
+                    class="sensor-value"
+                >
+                    -- °C
+                </div>
+
+                <div class="sensor-description">
+                    DHT11 TEMPERATURE
+                </div>
+
+            </div>
+
+
+            <div class="sensor-card">
+
+                <div class="sensor-label">
+                    HUMIDITY
+                </div>
+
+                <div
+                    id="currentHumidity"
+                    class="sensor-value"
+                >
+                    -- %
+                </div>
+
+                <div class="sensor-description">
+                    DHT11 HUMIDITY
+                </div>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =========================================
+             SENSOR GRAPH
+        ========================================== -->
+
+        <section class="data-section">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="small-label">
+                        REALTIME SENSOR DATA
+                    </span>
+
+                    <h2>
+                        Sensor Graph
+                    </h2>
+
+                </div>
+
+
+            </div>
+
+
+            <div class="chart-container">
+
+                <canvas
+                    id="sensorChart"
+                ></canvas>
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =========================================
+             SENSOR HISTORY
+        ========================================== -->
+
+        <section class="data-section history-section">
+
+
+            <div class="section-heading">
+
+                <div>
+
+                    <span class="small-label">
+                        FIREBASE REALTIME DATABASE
+                    </span>
+
+                    <h2>
+                        Sensor History
+                    </h2>
+
+                </div>
+
+
+                <button
+                    id="toggleHistory"
+                >
+                    SHOW HISTORY
+                </button>
+
+            </div>
+
+
+            <div
+                id="historyContent"
+                class="hidden"
+            >
+
+
+                <div class="history-controls">
+
+                    <label for="historyDate">
+                        SELECT DATE
+                    </label>
+
+
+                    <select id="historyDate">
+
+                        <option value="">
+                            SELECT DATE
+                        </option>
+
+                    </select>
+
+
+                    <div class="record-counter">
+
+                        <span>
+                            RECORDS
+                        </span>
+
+                        <strong id="recordCount">
+                            0
+                        </strong>
+
+                    </div>
+
+                </div>
+
+
+                <div class="table-wrapper">
+
+                    <table>
+
+                        <thead>
+
+                            <tr>
+
+                                <th>
+                                    TIME
+                                </th>
+
+                                <th>
+                                    TEMPERATURE
+                                </th>
+
+                                <th>
+                                    HUMIDITY
+                                </th>
+
+                            </tr>
+
+                        </thead>
+
+
+                        <tbody
+                            id="historyTableBody"
+                        >
+
+                            <tr class="empty-row">
+
+                                <td colspan="3">
+                                    NO DATA
+                                </td>
+
+                            </tr>
+
+                        </tbody>
+
+                    </table>
+
+                </div>
+
+
+            </div>
+
+
+        </section>
+
+
+        <!-- =========================================
+             FOOTER
+        ========================================== -->
+
+        <footer>
+
+            <span>
+                GIAN // DHT11 MONITOR
+            </span>
+
+            <span>
+                REALTIME DATABASE
+            </span>
+
+        </footer>
+
+
+    </main>
+
+
+    <!-- =========================================
+         CHART.JS
+    ========================================== -->
+
+    <script
+        src="https://cdn.jsdelivr.net/npm/chart.js"
+    ></script>
+
+
+    <!-- =========================================
+         FIREBASE APP
+    ========================================== -->
+
+    <script
+        type="module"
+        src="app.js"
+    ></script>
+
+
+</body>
+
+</html>
